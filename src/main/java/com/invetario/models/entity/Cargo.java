@@ -1,6 +1,7 @@
 package com.invetario.models.entity;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,18 +18,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cargos")
-public class Cargo {
+public class Cargo implements Serializable  {
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(name = "nombre_cargo")
 	private String nombreCargo;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name="cargo_id")
-	private List<Usuario> usuario;
+	
 
 	public Long getId() {
 		return id;
@@ -46,13 +49,6 @@ public class Cargo {
 		this.nombreCargo = nombreCargo;
 	}
 
-	public List<Usuario> getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(List<Usuario> usuario) {
-		this.usuario = usuario;
-	}
 
 
 	

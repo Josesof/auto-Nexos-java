@@ -49,19 +49,19 @@ public class Producto  implements Serializable {
 		fechaModifica = new Date();
 	}
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "id_usuario", referencedColumnName = "id", insertable = false, updatable = false)  
-	private Usuario usuario;
-	
+
+	@Column(name = "id_usuario")
+	private long idUsuario;
+
 
 	
 
-	public Usuario getUsuario() {
-		return usuario;
+	public long getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setIdUsuario(long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 	public Long getId() {

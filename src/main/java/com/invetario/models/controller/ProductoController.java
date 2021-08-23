@@ -77,7 +77,7 @@ public class ProductoController {
 			Producto productoActual = productoServiceImpl.findOne(id);			
 			productoActual.setNombreProducto(producto.getNombreProducto());
 			productoActual.setCantidad(producto.getCantidad());
-			productoActual.setUsuario(producto.getUsuario());			
+			productoActual.setIdUsuario(producto.getIdUsuario());			
 			productoActual.setFechaIngreso(producto.getFechaIngreso());
 			productoServiceImpl.save(productoActual);
 			
